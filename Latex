@@ -1,0 +1,186 @@
+\documentclass[%
+% --- Draft mode: 
+% --- Uncomment this to speed up the creation process  
+%	draft, %
+% --- Page Formatting
+	a4paper, 	% DINA4
+	12pt,		% Font size
+	oneside,  % oneside style
+% --- Table of contents	
+	toc=index,
+	toc=listof, % List of figures and tables are listed (unnumbered)
+	toc=bibliography, % Bibliography is listed  (unnumbered)
+	headings=optiontoheadandtoc,
+%]{scrreprt} % for bachelor and master theses
+]{scrartcl} % for seminar theses (class does not support chapters!)
+
+
+\usepackage{graphicx}
+\graphicspath{{Bilder/}}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textgreek}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{pgf, tikz}
+\usepackage{geometry}
+\usepackage[ngerman]{babel}
+%\usepackage[backend=biber,style=alphabetic,]{biblatex}
+
+% Titlepage
+%\usepackage{styles/titlepage}
+
+
+
+\usetikzlibrary{arrows, automata}
+
+%\addbibresource{HollowCoreFibreBib.bib}
+%\bibliographystyle{./IEEEtran}
+%\bibliography{./IEEEabrv,./HollowCoreFibreBib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\begin{document}
+\begin{titlepage}
+%		\selectlanguage{ngerman}
+		\thispagestyle{empty}
+		\newgeometry{right=2.5cm,left=2.5cm,top=1.5cm,bottom=1.5cm,includeheadfoot} 
+		{
+		\centering
+		\hrulefill \par
+		{\huge \textsc{ Passenger arrival at public transportation }\par}
+		\hrulefill\par
+		\vspace{2cm}
+		\sffamily
+		{\Large \textbf{Seminararbeit} \par} 
+		\bigskip
+		{im Masterstudiengang \\}\smallskip
+		{\large \text{Seminar Service Analytics} \par} 
+		\vspace{1.5cm}
+		{\text{Christian-Albrechts-Universität zu Kiel} \par}
+		\smallskip
+		{\text{Wirtschafts- und Sozialwissenschaftliche Fakultät} \par}
+		\smallskip
+		{\text{Institut für Betriebswirtschaftslehre} \par}
+		\smallskip
+		{\text{Professur für Service Analytics} \par}
+		\vspace{2cm}
+		{vorgelegt von \par}
+		\medskip
+		{\large \text{Lars Lingner und Silas Oettinghaus} \par} 
+		\medskip
+		{
+		\color{darkgray}
+%		{\@address\\}\smallskip
+		{stu217016@mail.uni-kiel.de und ???\\}\smallskip
+		{Matrikelnummer: 1138228,??? \\}\smallskip
+%		{\@additionalInfo\\}\smallskip
+		}
+		\vfill
+		{\mbox{
+				\begin{tabular}{rl}
+					Erstgutachter/in: Prof. Dr. Catherine Cleophas\\[\smallskipamount]
+					Zweitgutachter/in: M.Sc. Lena Hoersting 
+			\end{tabular}}
+		}\par
+		\vfill
+		\hrulefill\par
+		Kiel, der \today
+	}
+	 \restoregeometry
+\end{titlepage}
+
+
+
+%% --- Date of submission
+%\date{\today}
+%
+%\begin{document}
+%\title{Passenger arrival modelling for public transportation}
+%\author{Lars Lingner, Silas Oettinghaus}
+%\markboth{Seminar Servie Analytics, Summer Term 2021}{}
+%
+%\maketitle
+\pagenumbering{roman}
+%	\onehalfspacing
+
+\begin{abstract}
+Abstract auf deutsch,da gefordert...
+\end{abstract}
+
+
+\begin{abstract}
+This paper presents the technology of Hollow Core Fibres, its functional principles and its fibre properties.
+A distinction is made between Photonic Bandgap Fibre and Anti-Resonance Fibre and a comparison is given with Standard Single Mode Fibre. 
+\end{abstract}
+
+
+\newpage 
+	\pagenumbering{arabic} 
+
+\section{Introduction}
+Why have arrival patterns an impact on quality of service in public transportation and what could be learned by investigating them?
+
+\section{Modelling}
+For a long time, the behavior of individuals and groups in public spaces has been observed and studied. 
+In the field of urban transportation, the use of public transport is a particular focus of research. 
+The behavior of the users and in particular the arrival behavior is in the focus of the research, since one can determine the waiting time of the passengers and thus to a large extent also the perceived service level.\
+
+\subsection{Development of arrival pattern modelling}
+Mathematical modeling is the main factor influencing the accuracy of the predictions. 
+This has changed considerably in recent years.
+Starting in the 1960s with the research of X (GivenPaper1 p 294 2.2) and the half-headway principle,meaning the waiting time for the next bus is half the interval of the schedule. 
+This states that the distribution is based on an uniform distribution. 
+This approach assumes that passengers have no information about the plan and are not purposefully travelling by public transport. 
+This may be true for one-time passengers or tourists, but it is inappropriate by today's standards.
+However, these passengers will always form part of the customer base.\\
+\
+Following this idea, it was decided how to better describe the behavior. 
+With (ETH 2007) an approach was proposed, which combines the random and the experienced passengers. 
+Namely, the Johnson S\_{B} distribution in combination with a uniform distribution, which in certain proportions form the totality of passengers and their arrival patterns.  
+\
+The Johnson distribution is a function group which works with four parameters and is a transformation of the normal distribution. 
+These parameters are a -- Skew , b -- kurtosis , location -- shifted and scale -- scale.
+
+%\begin{align}
+%JSB(a,b,\alpha_{1},\alpha_{2}):=   f_{JSB(a,b,\alpha_{1},\alpha_{2})}(x)= \begin{cases} Erstes & if a<x<b\\%0 & \text{otherwise}
+%\end{align} 
+
+The current best description of the arrival pattern is the beta distribution described by (GivenPaper1), but the approach with partly random partly efficient passengers like before is maintained.
+Also the beta distribution is a group of functions based on two parameters p and q.....
+The beta distribution is based on the gamma distribution....
+
+Absatz über Betaverteilung 
+
+
+The data from GivenPaper1 is automatically generated in subways and ETH is recorded by hand for bus.
+
+
+\subsection{Influence of parameters}
+Rahmen der Verteilungen (Wikibilder?)
+What distinguishes peak and off-peak performance,headway, reliability, who is user of public transport .
+
+\section{Method}
+Which is our method and why did we chose it?
+Assumptions we did and why.
+
+We chose simulation, because simulations using suitable random numbers in an exploratory way, like in (byron 09 S.11).
+Through these, the required estimators are calculated. 
+
+Implement code?
+
+\subsection{Implementation}
+How can the model be expressed and implemented in the simulation.
+\subsection{Data}
+How, where and why?
+\subsection{Execution}
+How was the simulation done?
+
+\section{Results}
+What are the results and what can we learn?
+
+\section{Conclusion}
+Reflection of doing and results.
+What could be done differently and what would be also interesting?
+
+\end{document}
